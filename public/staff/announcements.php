@@ -96,12 +96,6 @@ $announcement = find_announcement_by_id($id);
               <button type='submit' name='submit'>Add Comment</button>
             </form>
           </div>
-          <hr>
-          <div>
-            <h1>The live calendar goes here</h1>
-            <p>--------------------------------</p>
-            <p>--------------------------------</p>
-          </div>
         </article> 
       </main>
       <footer id="footer">

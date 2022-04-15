@@ -1,5 +1,5 @@
 <?php
-
+// BELOW ARE THE EMPLOYEE QUERIES
 function find_all_employees() {
   global $db;
   $sql = "SELECT * FROM employee ";
@@ -210,7 +210,7 @@ function update_employee($employee, $id) {
   }
 }
 
-// ADMIN DELETING AN ACCOUNT
+// ADMIN DELETING AN EMPLOYEE ACCOUNT
 function delete_employee($id) {
   global $db;
 
@@ -230,6 +230,7 @@ function delete_employee($id) {
   }
 }
 
+// THIS IS THE ANNOUNCEMENT QUERIES
 function find_all_announcements() {
   global $db;
   $sql = "SELECT * FROM announcement ";
@@ -290,6 +291,8 @@ function create_new_announcement($announcement) {
     exit;
   }
 }
+
+// THIS IS THE IMAGE QUERIES
 
 
 ?>

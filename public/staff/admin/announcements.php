@@ -74,14 +74,7 @@ $announcement = find_announcement_by_id($id);
         <!--  Main body -->  
         <article id="description">
           <div>
-            <!-- This re-displays the message and resubmits the announcement each time you refresh the page -->
-            <?php echo display_session_message(); ?>
-            <div class="attributes">
-              <h1>Reminders &amp; Announcements</h1>
-              <p><?php echo h($announcement['announcement']); ?></p>
-            </div>
-            <hr>
-            <h1>Post Your Announcements Here</h1>
+          <h1>Post Your Announcements Here</h1>
             <!-- Updating the announcement table... Then pulling from that tbl date('F j, Y, g:i a');-->
             <form action="<?php echo url_for('/staff/admin/announcements.php'); ?>" method="post">
               <input type='hidden' id="date" name='date' value="<?php  ?>"><br>
@@ -90,12 +83,32 @@ $announcement = find_announcement_by_id($id);
               <textarea id="announcement" name='announcement' rows="5" cols="30"></textarea><br>
               <button type='submit' name='submit'>Add Comment</button>
             </form>
-          </div>
-          <hr>
-          <div>
-            <h1>The live calendar goes here</h1>
-            <p>--------------------------------</p>
-            <p>--------------------------------</p>
+            <hr>
+            <!-- This re-displays the message and resubmits the announcement each time you refresh the page -->
+            <?php echo display_session_message(); ?>
+            <div class="attributes">
+              <h1>Reminders &amp; Announcements</h1>
+              <?php
+              $sql = "SELECT * FROM announcement ";
+              $result = mysqli_query($db, $sql);
+
+              if(mysqli_num_rows($result) > 0) {
+                while($announcements = mysqli_fetch_assoc($result)) { ?>
+                    <?= "Date: " . $announcements['date']; ?><br>
+                    <hr>
+                    <?= "Employee: " . $announcements['employee_id']; ?><br>
+                    <hr>
+                    <?= "Announcement: " . $announcements['announcement']; ?><br>
+                    <hr>
+              <?php }
+                } 
+              ?>
+
+
+
+              <p><?php //echo h($announcement['announcement']); ?></p>
+            </div>
+            
           </div>
         </article> 
       </main>

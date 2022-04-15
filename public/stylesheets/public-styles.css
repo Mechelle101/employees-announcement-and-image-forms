@@ -78,6 +78,14 @@ header {
   padding: 20px;
 }
 
+.alb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 /* FOOTER  */
 footer { 
   background-color: #724a4a;

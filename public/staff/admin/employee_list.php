@@ -49,7 +49,6 @@ is_admin();
             <p>You can add an employee here.</p>
             <div id="add-employee" id="action">
               <a class="action" href="<?php echo url_for('staff/admin/new.php'); ?>">Add Employee</a>
-
             </div>
             <?php
             // finding all employees and putting them in employee_set
